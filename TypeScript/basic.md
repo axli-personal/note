@@ -4,6 +4,27 @@
 help: Just input tsc, and you will see help info.
 ```
 
+`function`
+
+```typescript
+"use strict" // Open the strict mode in javascript.
+function optionalGreet(firstName: string, lastName: string, middleName?: string) {
+    if (middleName) {
+        console.log(`${firstName} ${middleName} ${lastName}`);
+    } else {
+        console.log(`${firstName} ${lastName}`);
+    }
+}
+
+function mutiGreet(...nameList: string[]) {
+    console.log(nameList.join(" "));
+}
+
+optionalGreet("Anders", "Hejlsberg");
+optionalGreet("Linus", "Torvalds", "Benedict");
+mutiGreet("Linus", "Torvalds", "Benedict");
+```
+
 `class`
 
 ```typescript
@@ -40,10 +61,12 @@ interface Person {
 `module`
 
 ```typescript
-// CommonJS syntax
-module.exports = {
- pi: 3.14
-};
-const maths = require("maths");
+// export declaration.
+const imprecisePI = 3.14;
+export { imprecisePI as PI };
+
+// re-export declaration, simply use keyword 'from'.
+export { precisePI } from  "./Math";
+export * from  "./Math";
 ```
 
