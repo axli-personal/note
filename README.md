@@ -16,6 +16,12 @@ you needn't build it currently, because it only contains some text files.
 
 you can read it without clone it in github.
 
+#### Current research
+
+* TypeScript basic
+* Vue3 with TypeScript
+* Golang web
+
 #### Update status
 
 Long teram support, until the end of 2022.

@@ -53,8 +53,15 @@ interface Person {
     name: string;
     // '?' mean the attribute can be undefined.
     age?: number;
-    // Define a function.
-    greet(): void;
+}
+
+// Interface can use as a function type.
+interface numAddFunc {
+    (x: number, y: number): number;
+}
+
+let numAdd: numAddFunc = function(firstNum, secondNum) {
+    return firstNum + secondNum;
 }
 ```
 
