@@ -55,6 +55,11 @@ interface Person {
     age?: number;
 }
 
+// If you want to extend muti interface, use ',' as seperator.
+interface SuperPerson extend Person {
+    power: string;
+}
+
 // Interface can use as a function type.
 interface numAddFunc {
     (x: number, y: number): number;
