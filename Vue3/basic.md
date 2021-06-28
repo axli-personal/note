@@ -77,6 +77,23 @@ import { defineComponent, ref } from 'vue';
   });
   ```
   
+* `provide and inject`
+
+  ```typescript
+  // Why: it gives us a solution to solve the complex property problem in big project.
+  //      the relationship between provider and injecter become weak.
+  
+  setup() { // parent setup
+    const user = ref('john');
+    provide('user', user);
+  }
+  
+  setup() { // child setup
+    // Warning:  don't change inject value directly, because the damage of vue data flow.
+    // Solution: if you want to change it, inject a method to change it.
+    const user = inject('user', 'default');
+  }
+  ```
 
 #### Router
 
@@ -88,32 +105,48 @@ import { defineComponent, ref } from 'vue';
   // There is three type record allowed in Array<RouteRecordRaw>.
   type RouteRecordRaw = RouteRecordSingleView | RouteRecordMultipleViews | RouteRecordRedirect;
   
-// Here introduce two type.
+  // Here introduce two type.
   const routes: Array<RouteRecordRaw> = [
-    { // RouteRecordSingleView
-      path: "/content",
-      name: "Content",
-      component: Content
-    },
-    { // RouteRecordSingleView
-      path: "/home",
-      name: "Home",
-      component: Home,
-      alias: ["/", "index"]
-    },
-    { // RouteRecordRedirect
-      path: "/jump",
-      name: "Jump",
-      redirect: "/home"
-    }
+      { // RouteRecordSingleView
+          path: "/content",
+          name: "Content",
+          component: Content
+      },
+      { // RouteRecordSingleView
+          path: "/home",
+          name: "Home",
+          component: Home,
+          alias: ["/", "index"]
+      },
+      { // RouteRecordRedirect
+          path: "/jump",
+          name: "Jump",
+          redirect: "/home"
+      }
   ];
-  ```
   
+  // Matching syntax
+  // ------------------P1------P2------P3----
+  // path: '/precise/:param<(Regexp)><?/+/*>'
+  // ------------------P1------P2------P3----
+  
+  // P1 Part: Make it as a param.
+  // P2 Part: If the Regexp not match the url, router will find next route.
+  //          You may need to double '\' in script.
+  // P3 Part: ?(option),+(one or more),*(zero or more).
+  
+  // examples: '/users/:userId(\\d+)?'
+  
+  // helpful test tool: paths.esm.dev(website)
+  ```
+
+
 * `createRouter`
 
   ```typescript
   // We need to create a router to use in the App.
   
+  // You can pass a string to createWebHistory as the base url of the application.
   export default createRouter({
     history: createWebHistory(),
     routes: routes,
@@ -127,3 +160,4 @@ import { defineComponent, ref } from 'vue';
   // useRoute  equals to '$route'  in template part.
   // useRouter equals to '$router' in template part.
   ```
+

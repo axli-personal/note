@@ -19,10 +19,17 @@ you can read it without clone it in github.
 #### Current research
 
 * TypeScript basic
-* Vue3 with TypeScript
-* Golang web
+
+* Vue3 with TypeScript [Now]
+
+  Most of them are based on the `composition api` and it use it will bring many challenges.
+
+  I want to add more example in real project and try to use the `vite` to replace the `vue-cli`
+
+  I wil try my best to dive deeper in it In July and August.
+
+* Golang web [Wait]
 
 #### Update status
 
 Long teram support, until the end of 2022.
-

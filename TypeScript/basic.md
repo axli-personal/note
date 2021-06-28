@@ -82,3 +82,10 @@ export { precisePI } from  "./Math";
 export * from  "./Math";
 ```
 
+`动态渲染组件component`
+
+```html
+<!-- 使用is来指定应该渲染何种组件 -->
+<component href="url" :is="'a'">jump</component>
+```
+
