@@ -1,4 +1,4 @@
-### How to config a vue  application
+#### How to config a vue  application
 
 * `globalProperties`
 
