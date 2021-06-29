@@ -82,10 +82,11 @@ export { precisePI } from  "./Math";
 export * from  "./Math";
 ```
 
-`动态渲染组件component`
+`dynamic component`
 
 ```html
-<!-- 使用is来指定应该渲染何种组件 -->
+<!-- You can give the component the abality to dynamic render by prop 'is' -->
+<!-- 'is' can be a string -->
 <component href="url" :is="'a'">jump</component>
 ```
 
