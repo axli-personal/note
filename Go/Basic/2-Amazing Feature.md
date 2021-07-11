@@ -1,0 +1,159 @@
+##### Mutiple type
+
+`bool`
+
+```go
+// 1.true and false was the only two value for bool in go, this is reletive strict.
+var condition bool = 1 // not allowed
+var condition bool = bool(1) // not allowed
+
+// 2.'===' and '!===' was not provided in go, go forbid to compare string with other type.
+1 == "1" // not allowed
+
+// 3.because of the strict bool value in go, assign was never be confused with equal.
+if 1 = 2 {...} // miss a '=' will raise a error.
+```
+
+`array`
+
+```go
+// 1.Array in go is similar to array in C, both of which have fixed length.
+// 2.We use [constNumber]storeType to repersent the type of array.
+// 3.You can use keyword range to walk through the array.
+// 4.Assigning to another vaiable is finish by value copy, not address copy.
+
+// ---example--
+array := [3]int{1, 2} // empty value was set to default value of int.
+for index, item := range array { // enough to handle simple operation
+    fmt.Println(index, item)
+}
+```
+
+`silce`
+
+```go
+// 1.silce is a view to array and can control the array.
+// 2.You can use append(youSilce, value) to add value.
+// 3.You can use cap(youSilce) to get the capcity of you silce.
+// 4.append enlarge the room of array when overflow and a silce to new larger array will return.
+// 5.You can use [0:3:3] to define the cap to avoid append rewrite the rest of the array. 
+```
+
+`...`
+
+```go
+// 1.You can use '...' in '[]' to let compiler to calculate the length of the init list.
+// 2.You can use '...' before type to hold mutiple args.
+// 3.You can use '...' after vaiable to let the silce become mutiple args.
+
+// ---example---
+array := [...]int{1, 2, 3}
+func sum(nums ...int) int {
+	value := 0
+	for _, item := range nums {
+		value += item
+	}
+	return value
+}
+fmt.Println(sum(array[:]...))
+```
+
+`map`
+
+```go
+// 1.You can use map[keyType]ValueType to represent the type of map, not like C++ and Java.
+// 2.You can use youMap[key] to update or add a pair in map.
+// 3.You can use delete(youMap, key) to delete a pair in map.
+// 4.Go don't allow you to add duplicate pair in map, so the map[keyType]bool used as set.
+// 5.When visit, no assign and the pair don't exist, you will got default value.
+// 6.Solution to judge if exist, value, ok = youMap[key]
+// 7.Not like array, map pass by address.
+// 8.You can use make(type, roomSize) to allocate memory for map or synatx of { pair }.
+```
+
+`struct`
+
+```go
+// You can write another type in a struct to gain all the data and methods in it, not variable.
+```
+
+`Interface`
+
+```go
+// 1.Type don't need to specific what interface is implement, the compiler will do this.
+// 2.When the args was interface all type implement it can be pass into it.
+```
+
+##### Perfect control
+
+`switch`
+
+```go
+// 1.switch value can be number or string which bring us convinence.
+// 2.go don't need keyword break in switch because it stop when a branch finish by deault.
+// 3.go provided fallthrough keyword to jump to next branch, just one.
+// 4.go allowed you to set mutiple value to a branch, separate by ','.
+
+// ---example---
+switch 1 {
+case 1, 2:
+    fmt.Println("one")
+    fallthrough // jump to next branch
+case 3:
+    fmt.Println("two") // can reach
+case 4:
+    fmt.Println("three") // can't reach
+default:
+    fmt.Println("default")
+}
+```
+
+`for`
+
+```go
+// 1.for is magic, it conbine the power of while and for in other languages.
+// 2.for can followed by a condition or none(never stop).
+// 3.you could use break to jump out in the block of for.
+```
+
+`short declaration`
+
+```go
+// 1.short declaration is not a small trick.
+// 2.it bring us a more brief expression.
+// 3.it enhance the power of variable management in block of 'if', 'for', 'switch'.
+
+// ---example---
+if ok := someConditionFunc(); ok {...}
+for i := 0; i < 10; i++ {...}
+switch choice := someSwitchFunc(); choice {...}
+// Note: all variable will clean when block finish.
+// Note: You can't use var declaration to replace it because var can't follow those keyword.
+// Note: You can't use short declaration in package block.
+```
+
+##### Module management
+
+`import`
+
+```go
+// 1.three advance import method.
+import (
+    .    "strings" // expose all, call without string.xxx.
+    _    "example.com/my_mysql_driver" // just call the package's init function
+    fib  "github.com/gofiber/fiber/v2" // change another name
+)
+
+// 2.when the function and type's name start with uppercase letter, it will be public.
+```
+
+`version`
+
+```go
+// major: change api     incompatible
+// minor: add features   compatible
+// patch: fix bug        compatible
+
+// ---reference---
+// url: 'https://semver.org'
+```

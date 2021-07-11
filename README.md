@@ -32,7 +32,11 @@ you can read it without clone it in github.
 
   I wil try my best to dive deeper in it In July and August.
 
-* Golang web [Wait]
+* Golang web [Now]
+
+  I want to introduce some basc knowledge of go and add some algorithms.
+
+  Then I will dive in some popular framework in go.
 
 #### Update status
 
