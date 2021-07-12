@@ -1,4 +1,4 @@
-##### Mutiple type
+#### Mutiple type
 
 `bool`
 
@@ -71,20 +71,44 @@ fmt.Println(sum(array[:]...))
 // 8.You can use make(type, roomSize) to allocate memory for map or synatx of { pair }.
 ```
 
-`struct`
+##### Struct
 
-```go
-// You can write another type in a struct to gain all the data and methods in it, not variable.
-```
+* ###### Struct pointer or struct receiver
 
-`Interface`
+  ```go
+  // 1.Struct pointer and struct are different type.
+  // 2.Struct pointer and struct implement different interface.
+  // 3.Struct pointer can change the field of receiver.
+  // 4.Keep the consistency of the receiver to provide convenience for users.
+  ```
 
-```go
-// 1.Type don't need to specific what interface is implement, the compiler will do this.
-// 2.When the args was interface all type implement it can be pass into it.
-```
+* ###### Embedded field
 
-##### Perfect control
+  ```go
+  // 1.A field contains type but missed name will be embeded in outer struct.
+  // 2.Embedded field will have the same name as its type.
+  // 3.Inner type's function and field will be forwarded by outer struct.
+  // 4.Rewrite the forwarding function to avoid name conflicts.
+  ```
+
+* ###### Fancy Tag
+
+  ```go
+  // 1.Tag is a string usually written by compound literal.
+  // 2.Use space to separate each pair.
+  // 3.Tag can be captured by reflection mechanism.
+  ```
+
+##### Interface
+
+* ###### Implicit implementation
+
+  ```go
+  // 1.Type doedn't need to specify the interface it implements because of powerful compiler.
+  // 2.Familiar with some important interface provided by the standard library.
+  ```
+
+#### Perfect control
 
 `switch`
 
@@ -132,7 +156,7 @@ switch choice := someSwitchFunc(); choice {...}
 // Note: You can't use short declaration in package block.
 ```
 
-##### Module management
+#### Module management
 
 `import`
 
@@ -157,3 +181,4 @@ import (
 // ---reference---
 // url: 'https://semver.org'
 ```
+

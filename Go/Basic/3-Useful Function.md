@@ -49,3 +49,10 @@ for i := 0; i < len(fileInfos); i++ {
 }
 ```
 
+`strings`
+
+```go
+// returns a new string consisting of count copies of the string s.
+func Repeat(s string, count int) string
+```
+
