@@ -155,30 +155,3 @@ switch choice := someSwitchFunc(); choice {...}
 // Note: You can't use var declaration to replace it because var can't follow those keyword.
 // Note: You can't use short declaration in package block.
 ```
-
-#### Module management
-
-`import`
-
-```go
-// 1.three advance import method.
-import (
-    .    "strings" // expose all, call without string.xxx.
-    _    "example.com/my_mysql_driver" // just call the package's init function
-    fib  "github.com/gofiber/fiber/v2" // change another name
-)
-
-// 2.when the function and type's name start with uppercase letter, it will be public.
-```
-
-`version`
-
-```go
-// major: change api     incompatible
-// minor: add features   compatible
-// patch: fix bug        compatible
-
-// ---reference---
-// url: 'https://semver.org'
-```
-
