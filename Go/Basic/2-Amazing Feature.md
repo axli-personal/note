@@ -9,7 +9,7 @@ var condition bool = bool(1) // not allowed
 
 // 2.'===' and '!===' was not provided in go, go forbid to compare string with other type.
 1 == "1" // not allowed
-
+`
 // 3.because of the strict bool value in go, assign was never be confused with equal.
 if 1 = 2 {...} // miss a '=' will raise a error.
 ```
@@ -58,18 +58,56 @@ func sum(nums ...int) int {
 fmt.Println(sum(array[:]...))
 ```
 
-`map`
+##### map
 
-```go
-// 1.You can use map[keyType]ValueType to represent the type of map, not like C++ and Java.
-// 2.You can use youMap[key] to update or add a pair in map.
-// 3.You can use delete(youMap, key) to delete a pair in map.
-// 4.Go don't allow you to add duplicate pair in map, so the map[keyType]bool used as set.
-// 5.When visit, no assign and the pair don't exist, you will got default value.
-// 6.Solution to judge if exist, value, ok = youMap[key]
-// 7.Not like array, map pass by address.
-// 8.You can use make(type, roomSize) to allocate memory for map or synatx of { pair }.
-```
+* ###### usage
+
+  ```go
+  // 1.You can use map[keyType]ValueType to represent the type of map, not like C++ and Java.
+  // 2.You can use youMap[key] to update or add a pair in map.
+  // 3.You can use delete(youMap, key) to delete a pair in map.
+  // 4.Go don't allow you to add duplicate pair in map, so the map[keyType]bool used as set.
+  // 5.When visit, no assign and the pair don't exist, you will got default value.
+  // 6.Solution to judge if exist, value, ok = youMap[key]
+  // 7.Not like array, map pass by address.
+  // 8.You can use make(type, roomSize) to allocate memory for map or synatx of { pair }.
+  ```
+
+* ###### nil map
+
+  ```go
+  // 1.Declare a map without initialization, then it will be nil.
+  // 2.Visiting a entry in nil map will get default value and false.
+  // 3.Updating a entry in nil map will get panic(assignment to entry in nil map).
+  // 4.Deleting a entry in nil map will get nothing.
+  
+  // ---example---
+  var dictionary map[string]string
+  meaning, ok := dictionary["goroutine"]
+  delete(dictionary, "panic")
+  fmt.Println(meaning, ok)
+  dictionary["goroutine"] = "Look at the doc of google" // Oh no
+  ```
+
+##### fuction
+
+* ###### function type
+
+  ```go
+  // 1.Function can assign to variable, pass to parameter or returned by function.
+  // 2.Function can be a type, differ from parameter to return item.
+  type sayFunc func(string name) error
+  ```
+
+* ###### function literal
+
+  ```go
+  // 1.function literal don't has name.
+  var sayHiFunc sayFunc = func(string name) {
+      fmt.Println("Hi" + name + "!")
+  }
+  // 2.Append '()' at the end of function literal to call it.
+  ```
 
 ##### Struct
 
@@ -106,6 +144,15 @@ fmt.Println(sum(array[:]...))
   ```go
   // 1.Type doedn't need to specify the interface it implements because of powerful compiler.
   // 2.Familiar with some important interface provided by the standard library.
+  // ---Common interface---
+  type Writer interface // io
+  type Reader interface // io
+  ```
+
+* ###### Detail
+
+  ```go
+  // 1.Variable whose type is interface can't call the exist method without delclaration.
   ```
 
 #### Perfect control
@@ -155,3 +202,4 @@ switch choice := someSwitchFunc(); choice {...}
 // Note: You can't use var declaration to replace it because var can't follow those keyword.
 // Note: You can't use short declaration in package block.
 ```
+

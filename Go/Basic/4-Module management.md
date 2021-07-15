@@ -7,8 +7,10 @@ import (
     _    "example.com/my_mysql_driver" // just call the package's init function
     fib  "github.com/gofiber/fiber/v2" // change another name
 )
-
 // 2.when the function and type's name start with uppercase letter, it will be public.
+// 3.init is a special function in go.
+// 4.Go will init the the global variable, call init and call main.
+// 5.The package have heavy dependency will be init later then others.
 ```
 
 `Version`

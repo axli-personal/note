@@ -1,3 +1,9 @@
+`go bug`
+
+```
+Collect some useful info, then visit github issues with these info.
+```
+
 `go get`
 
 ```
@@ -25,6 +31,25 @@ meaning: It determine whether to use "go.mod".
 
 ```
 go clean will remove current directory's exe files.
+```
+
+`go build`
+
+```
+go build [-o output] [build flags] [packages]
+
+---build flags---
+-v     print the package name compiled.
+-x     print the command executed.
+-race  check the race condition, very useful in concurrent app.
+Note: when deploy the app or benchmark test, remove the '-race' flag.
+
+---packages---
+If the packages don't have the main, go will just compile for check without any output files.
+
+-o output            Write the output files to specific location, not just compile for check.
+
+-buildmode=<mode>    Specific the ouput type, even ouput to 'C' language.
 ```
 
 `go mod tidy`
