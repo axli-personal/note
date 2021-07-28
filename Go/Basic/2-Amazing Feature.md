@@ -1,62 +1,75 @@
 #### Mutiple type
 
-`bool`
+##### Define
 
-```go
-// 1.true and false was the only two value for bool in go, this is reletive strict.
-var condition bool = 1 // not allowed
-var condition bool = bool(1) // not allowed
+* ###### Two methods
 
-// 2.'===' and '!===' was not provided in go, go forbid to compare string with other type.
-1 == "1" // not allowed
-`
-// 3.because of the strict bool value in go, assign was never be confused with equal.
-if 1 = 2 {...} // miss a '=' will raise a error.
-```
+  ```go
+  type temperature float64
+  type temperature = float64
+  ```
 
-`array`
+##### Simple
 
-```go
-// 1.Array in go is similar to array in C, both of which have fixed length.
-// 2.We use [constNumber]storeType to repersent the type of array.
-// 3.You can use keyword range to walk through the array.
-// 4.Assigning to another vaiable is finish by value copy, not address copy.
+* ###### bool
 
-// ---example--
-array := [3]int{1, 2} // empty value was set to default value of int.
-for index, item := range array { // enough to handle simple operation
-    fmt.Println(index, item)
-}
-```
+  ```go
+  // 1.true and false was the only two value for bool in go, this is reletive strict.
+  var condition bool = 1 // not allowed
+  var condition bool = bool(1) // not allowed
+  
+  // 2.'===' and '!===' was not provided in go, go forbid to compare string with other type.
+  1 == "1" // not allowed
+  `
+  // 3.because of the strict bool value in go, assign was never be confused with equal.
+  if 1 = 2 {...} // miss a '=' will raise a error.
+  ```
 
-`silce`
+* ###### array
 
-```go
-// 1.silce is a view to array and can control the array.
-// 2.You can use append(youSilce, value) to add value.
-// 3.You can use cap(youSilce) to get the capcity of you silce.
-// 4.append enlarge the room of array when overflow and a silce to new larger array will return.
-// 5.You can use [0:3:3] to define the cap to avoid append rewrite the rest of the array. 
-```
+  ```go
+  // 1.Array in go is similar to array in C, both of which have fixed length.
+  // 2.We use [constNumber]storeType to repersent the type of array.
+  // 3.You can use keyword range to walk through the array.
+  // 4.Assigning to another vaiable is finish by value copy, not address copy.
+  
+  // ---example--
+  array := [3]int{1, 2} // empty value was set to default value of int.
+  for index, item := range array { // enough to handle simple operation
+      fmt.Println(index, item)
+  }
+  ```
 
-`...`
+##### Silce
 
-```go
-// 1.You can use '...' in '[]' to let compiler to calculate the length of the init list.
-// 2.You can use '...' before type to hold mutiple args.
-// 3.You can use '...' after vaiable to let the silce become mutiple args.
+* ###### usage
 
-// ---example---
-array := [...]int{1, 2, 3}
-func sum(nums ...int) int {
-	value := 0
-	for _, item := range nums {
-		value += item
-	}
-	return value
-}
-fmt.Println(sum(array[:]...))
-```
+  ```go
+  // 1.silce is a view to array and can control the array.
+  // 2.You can use append(youSilce, value) to add value.
+  // 3.You can use cap(youSilce) to get the capcity of you silce.
+  // 4.append enlarge the room of array when overflow and a silce to new larger array will return.
+  // 5.You can use [0:3:3] to define the cap to avoid append rewrite the rest of the array. 
+  ```
+
+* ###### `...`
+
+  ```go
+  // 1.You can use '...' in '[]' to let compiler to calculate the length of the init list.
+  // 2.You can use '...' before type to hold mutiple args.
+  // 3.You can use '...' after vaiable to let the silce become mutiple args.
+  
+  // ---example---
+  array := [...]int{1, 2, 3}
+  func sum(nums ...int) int {
+  	value := 0
+  	for _, item := range nums {
+  		value += item
+  	}
+  	return value
+  }
+  fmt.Println(sum(array[:]...))
+  ```
 
 ##### map
 
