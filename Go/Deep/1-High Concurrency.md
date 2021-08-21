@@ -96,3 +96,7 @@ func (rw *RWMutex) RUnlock()
 func (rw *RWMutex) Unlock()
 ```
 
+#### Chanel Comparison
+
+Equal if they were created by the same call to `make` or if both have value `nil`.
+

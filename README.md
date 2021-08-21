@@ -12,25 +12,27 @@ My English is not very good, so there will be many expression may confuse you.
 
 #### Build
 
-you needn't build it currently, because it only contains some text files.
+You needn't build it currently, because it only contains some text files.
 
-you can read it without clone it in github.
+I recommand you use typora with github theme to view this tutorial.
+
+You can read it without clone it in github for convenience.
 
 #### Current research
 
-* TypeScript basic [Now]
+* TypeScript basic [Wait]
 
   I will add some type, module and project knowledge of typescript.
 
   Also I will add some es6 feature.
 
-* Vue3 with TypeScript [Now]
+* Vue3 with TypeScript [Wait]
 
   Most of them are based on the `composition api` and it use it will bring many challenges.
 
   I want to add more example in real project and try to use the `vite` to replace the `vue-cli`.
 
-  I wil try my best to dive deeper in it In July and August.
+  The vue 3.2 change the useage a little and I will research it later.
 
 * Golang web [Now]
 
@@ -38,7 +40,13 @@ you can read it without clone it in github.
 
   Then I will dive in some popular framework in go.
 
+* Database [Now]
+
+  I will foucus on the postgresql for relationship database now and other database later.
+
 #### Update status
+
+I have changed my system from windows 10 to fedora workstation 34 and still have lots of thing to do.
 
 Long teram support, until the end of 2022.
 

@@ -27,7 +27,7 @@ func String(name string, value string, usage string) *string
 #### `func Parse`
 
 ```go
-// Parse the flag define before from command args.
+// Parse the flag defined before from command args.
 func Parse()
 ```
 
