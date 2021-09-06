@@ -12,33 +12,25 @@ My English is not very good, so there will be many expression may confuse you.
 
 #### Build
 
-You needn't build it currently, because it only contains some text files.
+You needn't build it currently, because it only contains some markdown files.
 
-I recommand you use typora with github theme to view this tutorial.
-
-You can read it without clone it in github for convenience.
+I recommand you read it in github directly.
 
 #### Current research
 
-* TypeScript basic [Wait]
+* JavaScript [Wait]
 
-  I will add some type, module and project knowledge of typescript.
+  I want to introduce some basc knowledge of go.
 
-  Also I will add some es6 feature.
+  TypeScript will be removed in next update because of it bring much problems in some small projects of mine.
 
-* Vue3 with TypeScript [Wait]
-
-  Most of them are based on the `composition api` and it use it will bring many challenges.
-
-  I want to add more example in real project and try to use the `vite` to replace the `vue-cli`.
+* Vue3 [Wait]
 
   The vue 3.2 change the useage a little and I will research it later.
 
-* Golang web [Now]
+* Golang [Wait]
 
-  I want to introduce some basc knowledge of go and add some algorithms.
-
-  Then I will dive in some popular framework in go.
+  I want to introduce some basc knowledge of go.
 
 * Database [Now]
 
@@ -46,7 +38,4 @@ You can read it without clone it in github for convenience.
 
 #### Update status
 
-I have changed my system from windows 10 to fedora workstation 34 and still have lots of thing to do.
-
-Long teram support, until the end of 2022.
-
+LTS and will stop update at July, 2022.

@@ -28,4 +28,3 @@
 * `types`
 
   Meaning: Add type one by one through a list.
-

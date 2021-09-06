@@ -89,4 +89,3 @@ export * from  "./Math";
 <!-- 'is' can be a string -->
 <component href="url" :is="'a'">jump</component>
 ```
-
