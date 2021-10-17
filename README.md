@@ -6,15 +6,13 @@ Mintul stands for Minimalist tutorial, it will contain some basic knowledge abou
 
 #### Language
 
-I will only maintainthe the English version.
+I will only maintainthe the English version. Other language will appear sometimes.
 
 My English is not very good, so there will be many expression may confuse you.
 
-#### Build
+#### [Read At Gitbook](https://axlis.gitbook.io/note)
 
-You needn't build it currently, because it only contains some markdown files.
-
-I recommand you read it in github directly.
+Maybe the index in gitbook is not the latest.
 
 #### Current research
 
@@ -32,9 +30,13 @@ I recommand you read it in github directly.
 
   I want to introduce some basc knowledge of go.
 
-* Database [Now]
+* Database [Wait]
 
   I will foucus on the postgresql for relationship database now and other database later.
+  
+* C++ [Now]
+
+  Object-oriented in C++. 
 
 #### Update status
 
