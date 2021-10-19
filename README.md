@@ -17,9 +17,7 @@ I will only maintainthe the English version. Other language will appear sometime
 
 My English is not very good, so there will be many expression may confuse you.
 
-#### Read Online
-
-📣 Soon it will be deploy on netlify, Gitbook site was deprecated.
+#### [Read Online](https://axleer-note.netlify.app)
 
 #### Current research
 
