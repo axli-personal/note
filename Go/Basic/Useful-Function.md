@@ -1,3 +1,5 @@
+# Useful Function
+
 `fmt`
 
 ```go

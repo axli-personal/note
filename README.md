@@ -1,3 +1,10 @@
+---
+home: true
+heroText: Axleer's Personal Note
+tagline: I wish everyone like my notes
+footer: Copyright @ 2021 <axleer, axli.personal@gmail.com>
+---
+
 ### Mintul
 
 Mintul stands for Minimalist tutorial, it will contain some basic knowledge about widely used technology.
@@ -10,9 +17,9 @@ I will only maintainthe the English version. Other language will appear sometime
 
 My English is not very good, so there will be many expression may confuse you.
 
-#### [Read At Gitbook](https://axlis.gitbook.io/note)
+#### Read Online
 
-Maybe the index in gitbook is not the latest.
+📣 Soon it will be deploy on netlify, Gitbook site was deprecated.
 
 #### Current research
 

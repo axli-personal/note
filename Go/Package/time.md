@@ -1,3 +1,5 @@
+# time
+
 ### `package time`
 
 #### `type timer`

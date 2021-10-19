@@ -1,3 +1,5 @@
+# flag
+
 ### `package flag`
 
 #### `func Bool`

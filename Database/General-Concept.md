@@ -1,3 +1,5 @@
+# General Concept
+
 > ACID: Atomicity, Consistency, Isolation and Durability.
 
 #### Concurrency Control

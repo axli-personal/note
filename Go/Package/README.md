@@ -1,1 +1,0 @@
-Stanard libary in golang.

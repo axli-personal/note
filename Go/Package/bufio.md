@@ -1,3 +1,5 @@
+# bufio
+
 ### `package bufio`
 
 #### `type Reader`

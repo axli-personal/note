@@ -1,0 +1,60 @@
+title: "Note"
+serviceWorker: true
+themeConfig:
+  nav:
+    - text: "Go"
+      link: "/Go/"
+    - text: "C++"
+      link: "/C++/"
+    - text: "Database"
+      link: "/Database/"
+    - text: "GitHub"
+      link: "https://github.com/axleer/Note"
+  sidebar:
+    "/Go/":
+      - title: "Basic"
+        collapsable: false
+        children:
+          - "Basic/Amazing-Feature"
+          - "Basic/Command-Line"
+          - "Basic/Module-Management"
+          - "Basic/Useful-Function"
+      - title: "Package"
+        collapsable: false
+        children:
+          - "Package/bufio"
+          - "Package/context"
+          - "Package/flag"
+          - "Package/net"
+          - "Package/runtime"
+          - "Package/sort"
+          - "Package/time"
+          - "Package/database/sql"
+          - "Package/encoding/json"
+      - title: "Deep"
+        collapsable: false
+        children:
+          - "Deep/High-Concurrency"
+      - title: "Driver"
+        collapsable: true
+        children:
+          - "Driver/MySQL"
+      - title: "Cloud"
+        collapsable: true
+        children:
+          - "Cloud/OOS-SDK"
+    "/C++/":
+      - title: "Basic"
+        collapsable: false
+        children:
+          - "Basic/Feature"
+          - "Basic/IO"
+          - "Basic/STL"
+      - title: "Deep"
+        collapsable: false
+        children:
+          - "Deep/Nested-Class"
+    "/Database/":
+      - "General-Concept"
+      - "PostgreSQL"
+  lastUpdated: "Last Updated"

@@ -1,3 +1,5 @@
+# Amazing Feature
+
 ### `type`
 
 #### `Definition`

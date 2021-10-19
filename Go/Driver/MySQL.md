@@ -1,3 +1,5 @@
+# MySQL
+
 > 📄 Introduction is based on the https://github.com/go-sql-driver/mysql project.
 
 #### `type Config`
