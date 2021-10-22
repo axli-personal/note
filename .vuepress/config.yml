@@ -61,4 +61,7 @@ themeConfig:
     "/Database/":
       - "General-Concept"
       - "PostgreSQL"
+    "/ML/":
+      - "pytorch"
+      - "optimization"
   lastUpdated: "Last Updated"
