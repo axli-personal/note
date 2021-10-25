@@ -1,19 +1,18 @@
 # Amazing Feature
 
-### `type`
+## Type
 
-#### `Definition`
+### Definition
 
 ```go
 // Temperature is a new type which differ from float64.
 type temperature float64
 
-
 // Temperature is not a new type which can be used to solve the type dependency problem.
 type temperature = float64
 ```
 
-#### `bool`
+### Boolean
 
 ```go
 // true and false was the only two value for bool in go, this is reletive strict.
@@ -39,7 +38,7 @@ if math.NaN() == math.NaN() {
 }
 ```
 
-#### `Array`
+### Array
 
 ```go
 // 1.Array in go is similar to array in C, both of which have fixed length.
@@ -54,19 +53,19 @@ for index, item := range array { // enough to handle simple operation
 }
 ```
 
-##### Silce
+### Slice
 
-* ###### usage
+#### Usage
 
-  ```go
-  // 1.silce is a view to array and can control the array.
-  // 2.You can use append(youSilce, value) to add value.
-  // 3.You can use cap(youSilce) to get the capcity of you silce.
-  // 4.append enlarge the room of array when overflow and a silce to new larger array will return.
-  // 5.You can use [0:3:3] to define the cap to avoid append rewrite the rest of the array. 
-  ```
+```go
+// 1.silce is a view to array and can control the array.
+// 2.You can use append(youSilce, value) to add value.
+// 3.You can use cap(youSilce) to get the capcity of you silce.
+// 4.append enlarge the room of array when overflow and a silce to new larger array will return.
+// 5.You can use [0:3:3] to define the cap to avoid append rewrite the rest of the array. 
+```
 
-* ###### `...`
+#### Tips
 
   ```go
   // 1.You can use '...' in '[]' to let compiler to calculate the length of the init list.
@@ -85,55 +84,57 @@ for index, item := range array { // enough to handle simple operation
   fmt.Println(sum(array[:]...))
   ```
 
-##### map
+### Map
 
-* ###### usage
+#### Usage
 
-  ```go
-  // 1.You can use map[keyType]ValueType to represent the type of map, not like C++ and Java.
-  // 2.You can use youMap[key] to update or add a pair in map.
-  // 3.You can use delete(youMap, key) to delete a pair in map.
-  // 4.Go don't allow you to add duplicate pair in map, so the map[keyType]bool used as set.
-  // 5.When visit, no assign and the pair don't exist, you will got default value.
-  // 6.Solution to judge if exist, value, ok = youMap[key]
-  // 7.Not like array, map pass by address.
-  // 8.You can use make(type, roomSize) to allocate memory for map or synatx of { pair }.
-  ```
+```go
+// 1.You can use map[keyType]ValueType to represent the type of map, not like C++ and Java.
+// 2.You can use youMap[key] to update or add a pair in map.
+// 3.You can use delete(youMap, key) to delete a pair in map.
+// 4.Go don't allow you to add duplicate pair in map, so the map[keyType]bool used as set.
+// 5.When visit, no assign and the pair don't exist, you will got default value.
+// 6.Solution to judge if exist, value, ok = youMap[key]
+// 7.Not like array, map pass by address.
+// 8.You can use make(type, roomSize) to allocate memory for map or synatx of { pair }.
+```
 
-* ###### nil map
+#### Tips
 
-  ```go
-  // 1.Declare a map without initialization, then it will be nil.
-  // 2.Visiting a entry in nil map will get default value and false.
-  // 3.Updating a entry in nil map will get panic(assignment to entry in nil map).
-  // 4.Deleting a entry in nil map will get nothing.
-  
-  // ---example---
-  var dictionary map[string]string
-  meaning, ok := dictionary["goroutine"]
-  delete(dictionary, "panic")
-  fmt.Println(meaning, ok)
-  dictionary["goroutine"] = "Look at the doc of google" // Oh no
-  ```
+```go
+// 1.Declare a map without initialization, then it will be nil.
+// 2.Visiting a entry in nil map will get default value and false.
+// 3.Updating a entry in nil map will get panic(assignment to entry in nil map).
+// 4.Deleting a entry in nil map will get nothing.
 
-##### fuction
+// Nil Map
+var dictionary map[string]string
+val, ok := dictionary["word"] // "", false
+dictionary["word"] = "raise panic"
 
-* ###### function type
+// Pointer Key
+dict := map[*int]int{}
+dict[nil] = 26
+val, ok := dict[nil] // 26, true
+```
 
-  ```go
-  // 1.Function can assign to variable, pass to parameter or returned by function.
-  // 2.Function can be a type, differ from parameter to return item.
-  type sayFunc func(string name) error
-  ```
+### Fuction
 
-* ###### function literal
+#### Function Type
 
-  ```go
-  // 1.function literal don't has name.
-  var sayHiFunc sayFunc = func(string name) {
-      fmt.Println("Hi" + name + "!")
-  }
-  // 2.Append '()' at the end of function literal to call it.
+```go
+// 1.Function can assign to variable, pass to parameter or returned by function.
+// 2.Function can be a type, differ from parameter to return item.
+type sayFunc func(string name) error
+```
+
+#### Anonymous Function
+
+```go
+// Append '()' at the end of Anonymous Function to call it immediately.
+var sayHiFunc sayFunc = func(string name) {
+    fmt.Println("Hi" + name)
+}
   ```
 
 ##### Struct
