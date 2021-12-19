@@ -1,11 +1,11 @@
-#### `let`
+## `let`
 
 ```javascript
 // 1.Not allow duplicate declare for a variable.
 // 2.Support block scope.
 ```
 
-#### `const`
+## `const`
 
 ```javascript
 // 1.Support block scope
@@ -13,7 +13,7 @@
 // 3.Can't change the value, except inner of the array and object because of the address.
 ```
 
-#### Separated assignment
+## Separated Assignment
 
 ```javascript
 // 1.Official called destructing assignment, but I like call it separated assignment.
@@ -24,7 +24,7 @@ let {variableA, variableB} = object;
 // 4.This was commonly used in functions parms.
 ```
 
-#### `...`
+## `...`
 
 ```javascript
 // The `...` was always palced in front of the variable.
@@ -36,7 +36,7 @@ allCompany = [...bigCompany, 'Kaggle', 'LeetCode']
 show(...bigCompany)
 ```
 
-#### `Symbol()`
+## `Symbol()`
 
 ```javascript
 // Get a unique variable.
@@ -44,7 +44,7 @@ console.log(Symbol() == Symbol())
 console.log(Symbol('same') == Symbol('same'))
 ```
 
-#### Promise
+## Promise
 
 ```javascript
 const start = new Promise((resolve, reject) => {
@@ -63,3 +63,35 @@ const result = start.then(function(value) {
     throw Error('fail') // Status: rejected     Result: what you pass in
 })
 ```
+
+## Dynamic Import
+
+It give you a way to load the file that **you really need at the correct time**, even don't load it at all.
+
+If you use bundler to build your project, the source file loaded dynamicly will be never combine together.
+
+```javascript
+import("./book.js").then(({default: Book, buy}) => {
+    let book = new Book("Learn JavaScript");
+    buy(book);
+})
+```
+
+When you config your router in vue, you may write fllowings:
+
+```js
+const routes = [
+  {
+    path: "/path",
+    component: () => import("/src/views/Component.vue")
+  }
+]
+```
+
+You can check the type of componet parameter.
+
+```ts
+declare type RawRouteComponent = RouteComponent | Lazy<RouteComponent>;
+declare type Lazy<T> = () => Promise<T>;
+```
+
