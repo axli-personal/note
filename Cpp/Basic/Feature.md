@@ -143,6 +143,41 @@
 // 1.new可以为内置数据类型申请内存,也可以为堆内存分配内存.
 ```
 
+## `const`
+
+```c++
+// 星号左边const表示所指之物是常量, 星号右边const表示指针本身是常量.
+const char* const s;
+
+// 迭代器中, const_iteator表示所指之物是常量.
+const vector<int>::const_iterator iter = vec.begin();
+
+// 函数返回值和参数都可以声明为const.
+const string status(const int code);
+
+// 成员函数声明为const, 支撑了'pass by reference-to-const'这一传递对象的方式.
+// 可以使用mutable修饰属性表示更改不会对类的常量性做出改变, 实现'logical constness'.
+class Teacher {
+public:
+    bool show_info(const bool detail) const;
+private:
+	std::string name;
+    mutable char buf;
+};
+
+// 使用const成员函数实现non-const成员函数.
+const_cast<bool&>(static_cast<const Teacher&>(*this).show_info());
+```
+
+## `const_cast`
+
+```c++
+// const_cast可以将引用和指针的const限制移除; 如果底层元素也被const修饰, 那么这么做是未定义的.
+int element = 0;
+const int* ptr = &element;
+int* new_ptr = const_cast<int*>(ptr);
+```
+
 #### new 与 delete
 
 ##### 分配内存和释放内存写法一一对应.

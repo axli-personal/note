@@ -9,11 +9,11 @@ themeConfig:
     - text: "Go"
       link: "/Go/"
     - text: "C++"
-      link: "/C++/"
+      link: "/Cpp/"
     - text: "Database"
       link: "/Database/"
     - text: "GitHub"
-      link: "https://github.com/axleer/Note"
+      link: "https://github.com/axli-personal"
   sidebar:
     "/Go/":
       - title: "Basic"
@@ -47,17 +47,20 @@ themeConfig:
         collapsable: true
         children:
           - "Cloud/OOS-SDK"
-    "/C++/":
+    "/Cpp/":
       - title: "Basic"
         collapsable: false
         children:
           - "Basic/Feature"
-          - "Basic/IO"
           - "Basic/STL"
       - title: "Deep"
         collapsable: false
         children:
           - "Deep/Nested-Class"
+      - title: "STD"
+        collapsable: false
+        children:
+          - "STD/IO"
     "/Database/":
       - "General-Concept"
       - "PostgreSQL"
