@@ -122,3 +122,16 @@ func (tx *Tx) StmtContext(ctx context.Context, stmt *Stmt) *Stmt
 // Other API have the same usage as DB.
 ```
 
+#### `type Result`
+
+```go
+// Many drivers don't support these features.
+// So in most cases, I will omit the result of a SQL command.
+// Unsupport package list:
+//   - https://github.com/go-sql-driver/mysql
+type Result interface {
+	LastInsertId() (int64, error)
+	RowsAffected() (int64, error)
+}
+```
+

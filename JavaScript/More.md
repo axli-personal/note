@@ -64,6 +64,22 @@ const result = start.then(function(value) {
 })
 ```
 
+## `async`和`await`
+
+```javascript
+// ECMAScript 2017
+async function getUser() {
+  try {
+    // 从第一个await语句开始异步执行.
+    const response = await axios.get('/user?ID=12345');
+    console.log(response);
+  } catch (error) {
+    // 使用try与catch语法捕获异常.
+    console.error(error);
+  }
+}
+```
+
 ## Dynamic Import
 
 It give you a way to load the file that **you really need at the correct time**, even don't load it at all.
