@@ -1,3 +1,19 @@
+# ECMAScript
+
+## 类型转换
+
+* From number to string: `String(num)`
+* From string to intger: `parseInt(str)`
+* From string to float: `parseFloat(str)`
+* From others to boolean: `Boolean(other)`
+
+## `Date`
+
+```javascript
+currentTime = new Date()
+console.log(currentTime.getHours())
+```
+
 ## `let`
 
 ```javascript
