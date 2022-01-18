@@ -60,8 +60,8 @@ module.exports = {
         {
           text: "Basic",
           children: [
+            "/Cpp/Basic/C",
             "/Cpp/Basic/Type",
-            "/Cpp/Basic/Feature",
             "/Cpp/Basic/STL"
           ]
         },
