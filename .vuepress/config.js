@@ -58,25 +58,22 @@ module.exports = {
       ],
       "/Cpp/": [
         {
-          text: "Basic",
+          text: "Easy",
           children: [
-            "/Cpp/Basic/C",
-            "/Cpp/Basic/Type",
-            "/Cpp/Basic/STL"
+            "/Cpp/Easy/C",
+            "/Cpp/Easy/Type",
+            "/Cpp/Easy/Reference",
+            "/Cpp/Easy/STL",
+            "/Cpp/Easy/IO",
+            "/Cpp/Easy/Nested-Class",
           ]
         },
         {
-          text: "Deep",
+          text: "Hard",
           children: [
-            "/Cpp/Deep/Nested-Class"
+            "/Cpp/Hard/Concurrency",
           ]
         },
-        {
-          text: "STD",
-          children: [
-            "/Cpp/STD/IO"
-          ]
-        }
       ],
       "/Database/": [
         "/Database/General-Concept",

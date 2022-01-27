@@ -1,5 +1,7 @@
 # C++
 
-## Feature
+这里记录了一些关于C++的读书笔记, 分为Easy和Hard两个部分.
 
-😁 This part will contain all the things about C++ from basic to deep.
+## 参考资料
+
+* C++ Concurrency In Action (Second Edition) By Anthony.

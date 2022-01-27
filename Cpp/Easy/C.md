@@ -11,6 +11,16 @@ void solve() {
 }
 ```
 
+## 获取源码信息
+
+使用以下宏, 请确保编译器支持.
+
+```c++
+printf("%d\n", __LINE__);
+printf("%s\n", __FUNCTION__);
+printf("%s\n", __FILE__);
+```
+
 `g++编译器`
 
 ```
