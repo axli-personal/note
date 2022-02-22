@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Note',
+  title: "Note",
   serviceWorker: true,
   head: [
     ["link", { rel: "icon", href: "/note.png" }]
