@@ -6,6 +6,9 @@ module.exports = {
   ],
 
   themeConfig: {
+    themePlugins: {
+      externalLinkIcon: false
+    },
     navbar: [
       { text: "Go", link: "/Go/" },
       { text: "C++", link: "/Cpp/" },
@@ -20,7 +23,8 @@ module.exports = {
             "/Go/Basic/Amazing-Feature",
             "/Go/Basic/Command-Line",
             "/Go/Basic/Module-Management",
-            "/Go/Basic/Useful-Function"
+            "/Go/Basic/Useful-Function",
+            "/Go/Basic/Encoding"
           ]
         },
         {
@@ -34,7 +38,7 @@ module.exports = {
             "/Go/Package/sort",
             "/Go/Package/time",
             "/Go/Package/database/sql",
-            "/Go/Package/encoding/json"
+            "/Go/Package/net/url",
           ]
         },
         {

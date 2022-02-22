@@ -1,24 +1,11 @@
 ---
 home: true
-heroText: Personal Note
-tagline: Enjoy Yourself
-footer: Copyright @ 2021
+heroText: Note
+tagline: Just a english tech book and wish you like it.
+features:
+  - title: Go
+    details: I love using Go to build the backend of my web application.
+  - title: C++
+    details: C++ is the programming language I am most familiar with.
+footer: Copyright @ 2021 AoXiang Li
 ---
-
-# Note
-
-## Language
-
-I will only maintain the the English version. Other language may appear sometimes.
-
-My English is not very good, so there will be many expression may confuse you.
-
-## Research 
-
-### Go
-
-I love using Go to build the backend of my web application.
-
-## Status
-
-LTS and will stop update at July, 2022.
