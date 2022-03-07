@@ -1,12 +1,6 @@
 # Command Line
 
-`go bug`
-
-```
-Collect some useful info, then visit github issues with these info.
-```
-
-`go get`
+## go get
 
 ```
 command: go get <url>/<author>/<package>/<main_version>
@@ -15,46 +9,45 @@ example: go get github.com/gofiber/fiber/v2
 proxy support: get help from "https://goproxy.io"
 ```
 
-`GOPATH`
+## GOPATH
 
 ```
 GOPATH is a user variable in your computer.
 It was set to be "user_home/go" by default.
 ```
 
-`GO111MODULE`
+## GO111MODULE
 
 ```
 GO111MODULE=<on/off/auto(default)>
 meaning: It determine whether to use "go.mod".
 ```
 
-`go clean`
+## go clean
 
 ```
-go clean will remove current directory's exe files.
+go clean will remove executable files in current directory.
 ```
 
-`go build`
+## go build
 
+```bash
+$ go build [flags] [pkgs]
+
+# flags:
+#   -o <position>      Write the output files to specific location.
+#   -gcflags <args>    Arguments to pass on each go tool compile invocation.
+#   -buildmode <mode>  Specific the ouput type.
+#   -race              Enable data race detection.
+
+# helps:
+#   go tool compile --help
+
+# examples:
+#   go build -gcflags='-m -l' .
 ```
-go build [-o output] [build flags] [packages]
 
----build flags---
--v     print the package name compiled.
--x     print the command executed.
--race  check the race condition, very useful in concurrent app.
-Note: when deploy the app or benchmark test, remove the '-race' flag.
-
----packages---
-If the packages don't have the main, go will just compile for check without any output files.
-
--o output            Write the output files to specific location, not just compile for check.
-
--buildmode=<mode>    Specific the ouput type, even ouput to 'C' language.
-```
-
-`go mod tidy`
+## go mod tidy
 
 ```
 Command 'go mod tidy' will analysis the dependencies of your module.
