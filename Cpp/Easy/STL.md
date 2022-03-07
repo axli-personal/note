@@ -1,6 +1,23 @@
-# STL
+# 标准库
 
-#### `array`
+## string
+
+### substr
+
+在脚本语言中都存在切片这个概念, 而在C++中可以通过`substr`方法实现相应功能.
+
+不过`substr`会进行拷贝, 所以在某些场合仅适用于获取长度较小的子串.
+
+| parameter | meaning                          |
+| --------- | -------------------------------- |
+| start     | the index of the first character |
+| len       | the length of the substring      |
+
+```c++
+str.substr(start, len);
+```
+
+## array
 
 1）初始化
 
@@ -17,7 +34,7 @@ arr.size();      // 返回元素数量.
 arr[position]++; // 返回下标处元素的引用,不检查数组是否越界!
 ```
 
-#### `vector`
+## vector
 
 1）初始化
 

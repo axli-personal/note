@@ -75,13 +75,17 @@ module.exports = {
         {
           text: "Hard",
           children: [
-            "/Cpp/Hard/Concurrency",
+            "/Cpp/Hard/Concurrency-01",
+            "/Cpp/Hard/Concurrency-02",
           ]
         },
       ],
       "/Database/": [
         "/Database/General-Concept",
         "/Database/PostgreSQL"
+      ],
+      "/OS": [
+        "/OS/1-Process.md",
       ]
     }
   },
