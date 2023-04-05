@@ -1,18 +1,24 @@
-module.exports = {
+import { defaultTheme } from 'vuepress'
+
+export default {
   title: "Note",
   serviceWorker: true,
   head: [
     ["link", { rel: "icon", href: "/note.png" }]
   ],
 
-  themeConfig: {
+  theme: defaultTheme({
     themePlugins: {
       externalLinkIcon: false
     },
     navbar: [
       { text: "Go", link: "/Go/" },
       { text: "C++", link: "/Cpp/" },
-      { text: "Database", link: "/Database/" },
+      { text: "Java", link: "/Java/1-Thread.md" },
+      { text: "算法", link: "/Algo/Summary.md" },
+      { text: "操作系统", link: "/OS/1-Process.md" },
+      { text: "MySQL", link: "/MySQL/1-Base.md" },
+      { text: "Redis", link: "/Redis/1-Base.md" },
       { text: "GitHub", link: "https://github.com/axli-personal" }
     ],
     sidebar: {
@@ -80,15 +86,38 @@ module.exports = {
           ]
         },
       ],
-      "/Database/": [
-        "/Database/General-Concept",
-        "/Database/PostgreSQL"
+      "/Java/": [
+        "/Java/1-Thread.md"
+      ],
+      "/Algo/": [
+        {
+          text: "算法",
+          children: [
+            "/Algo/Summary.md",
+            "/Algo/LeetCode/25.md",
+            "/Algo/LeetCode/15.md",
+            "/Algo/LeetCode/523.md",
+            "/Algo/LeetCode/560.md",
+          ]
+        }
       ],
       "/OS": [
         "/OS/1-Process.md",
-      ]
+        "/OS/2-IO.md",
+      ],
+      "/MySQL/": [
+        "/MySQL/1-Base",
+        "/MySQL/2-Index",
+        "/MySQL/3-Lock",
+        "/MySQL/4-PG",
+      ],
+      "/Redis/": [
+        "/Redis/1-Base.md",
+        "/Redis/2-Type.md",
+        "/Redis/3-Lock.md"
+      ],
     }
-  },
+  }),
   lastUpdated: "Last Updated"
 }
 

@@ -2,5 +2,3 @@ node_modules
 .vuepress/dist
 .vuepress/.cache
 .vuepress/.temp
-package-lock.json
-*.sh
