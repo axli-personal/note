@@ -54,3 +54,40 @@ vec.push_back(value);    // 尾部插入元素,返回空.
 vec.insert(iter, value); // 任意位置插值.
 ```
 
+## priority_queue
+
+1) 初始化
+
+```c++
+priority_queue<int> pq; // 默认是大顶堆.
+priority_queue<int, vector<int>, greater<int>> pq; // 小顶堆.
+```
+
+2) 下沉和上浮
+
+```c++
+void sink(vector<int> pq, int pos) {
+    while (pos * 2 + 1 < pq.size()) {
+        int child = pos * 2 + 1; // 左子节点.
+        if (child + 1 < pq.size() && pq[child] < pq[child + 1]) {
+            child++; // 存在右子结点, 并且右子节点更大.
+        }
+        if (pq[pos] >= pq[child]) {
+            break; // 比子结点都大, 不需要继续下沉.
+        }
+        swap(pq[pos], pq[child]);
+        pos = child;
+    }
+}
+
+void swim(vector<int> pq, int pos) {
+    while (pos > 0) {
+        int parent = (pos - 1) / 2; // 父节点.
+        if (pq[pos] <= pq[parent]) {
+            break; // 比父节点小, 不需要上浮.
+        }
+        swap(pq[pos], parent);
+        pos = parent;
+    }
+}
+```
