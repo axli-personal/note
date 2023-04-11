@@ -94,6 +94,8 @@ export default {
           text: "算法",
           children: [
             "/Algo/Summary.md",
+            "/Algo/Interview/1.md",
+            "/Algo/Interview/2.md",
             "/Algo/LeetCode/25.md",
             "/Algo/LeetCode/15.md",
             "/Algo/LeetCode/523.md",
