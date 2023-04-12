@@ -90,14 +90,26 @@ export default {
         "/Java/1-Thread.md"
       ],
       "/Algo/": [
+        "/Algo/Summary.md",
         {
-          text: "算法",
+          text: "模板",
           children: [
-            "/Algo/Summary.md",
+            "/Algo/Template/Binary-Search.md",
+          ]
+        },
+        {
+          text: "面试",
+          children: [
             "/Algo/Interview/1.md",
             "/Algo/Interview/2.md",
+          ]
+        },
+        {
+          text: "刷题",
+          children: [
             "/Algo/LeetCode/25.md",
             "/Algo/LeetCode/15.md",
+            "/Algo/LeetCode/35.md",
             "/Algo/LeetCode/523.md",
             "/Algo/LeetCode/560.md",
             "/Algo/LeetCode/120.md",
