@@ -17,7 +17,7 @@ export default {
       { text: "Java", link: "/Java/1-Thread.md" },
       { text: "算法", link: "/Algo/Summary.md" },
       { text: "操作系统", link: "/OS/1-Process.md" },
-      { text: "MySQL", link: "/MySQL/1-Base.md" },
+      { text: "MySQL", link: "/MySQL/1-Index.md" },
       { text: "Redis", link: "/Redis/1-Base.md" },
       { text: "GitHub", link: "https://github.com/axli-personal" }
     ],
@@ -95,6 +95,7 @@ export default {
           text: "模板",
           children: [
             "/Algo/Template/Binary-Search.md",
+            "/Algo/Template/Quick-Sort.md",
           ]
         },
         {
@@ -125,6 +126,7 @@ export default {
             "/Algo/NowCoder/DP46.md",
             "/Algo/LeetCode/261.md",
             "/Algo/LeetCode/179.md",
+            "/Algo/LeetCode/215.md",
           ]
         }
       ],
@@ -133,8 +135,8 @@ export default {
         "/OS/2-IO.md",
       ],
       "/MySQL/": [
-        "/MySQL/1-Base",
-        "/MySQL/2-Index",
+        "/MySQL/1-Index.md",
+        "/MySQL/2-Transaction.md",
         "/MySQL/3-Lock",
         "/MySQL/4-PG",
       ],
