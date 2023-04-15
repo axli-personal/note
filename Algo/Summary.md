@@ -1,5 +1,9 @@
 # 汇总
 
+## 模拟
+
+* [比较版本号](./LeetCode/165.md)
+
 ## 排序
 
 * [排列最大数](./LeetCode/179.md)
@@ -9,14 +13,18 @@
 ## 数组
 
 * [旋转数组](./LeetCode/189.md)
+* [下一个排列](./LeetCode/31.md)
 
 ## 链表
 
 * [分组反转链表](./LeetCode/25.md)
+* [删除排序链表中的重复元素 II](./LeetCode/82.md)
 
 ## 栈
 
 * [基本计算器 II](./LeetCode/227.md)
+* [最长有效括号](./LeetCode/32.md)
+* [验证栈序列](./LeetCode/946.md)
 
 ## 双指针
 
@@ -50,6 +58,8 @@
 
 * [岛屿数量](./LeetCode/200.md)
 * [被围绕的区域](./LeetCode/130.md)
+* [括号生成](./LeetCode/22.md)
+* [全排列](./LeetCode/46.md)
 
 ## 图
 
