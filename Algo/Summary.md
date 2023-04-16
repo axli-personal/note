@@ -25,6 +25,7 @@
 * [基本计算器 II](./LeetCode/227.md)
 * [最长有效括号](./LeetCode/32.md)
 * [验证栈序列](./LeetCode/946.md)
+* [二叉树的后序遍历](./LeetCode/145.md)
 
 ## 双指针
 

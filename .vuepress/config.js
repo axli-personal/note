@@ -135,6 +135,7 @@ export default {
             "/Algo/LeetCode/82.md",
             "/Algo/LeetCode/165.md",
             "/Algo/LeetCode/946.md",
+            "/Algo/LeetCode/145.md",
           ]
         }
       ],
