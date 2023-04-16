@@ -14,7 +14,7 @@ export default {
     navbar: [
       { text: "Go", link: "/Go/" },
       { text: "C++", link: "/Cpp/" },
-      { text: "Java", link: "/Java/1-Thread.md" },
+      { text: "Java", link: "/Java/1-Base.md" },
       { text: "算法", link: "/Algo/Summary.md" },
       { text: "操作系统", link: "/OS/1-Process.md" },
       { text: "MySQL", link: "/MySQL/1-Index.md" },
@@ -50,7 +50,7 @@ export default {
         {
           text: "Deep",
           children: [
-            "/Go/Deep/High-Concurrency"
+            "/Go/Deep/Concurrency.md",
           ]
         },
         {
@@ -87,7 +87,8 @@ export default {
         },
       ],
       "/Java/": [
-        "/Java/1-Thread.md"
+        "/Java/1-Base.md",
+        "/Java/2-Thread.md",
       ],
       "/Algo/": [
         "/Algo/Summary.md",
