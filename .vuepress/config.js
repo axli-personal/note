@@ -89,6 +89,7 @@ export default {
       "/Java/": [
         "/Java/1-Base.md",
         "/Java/2-Thread.md",
+        "/Java/3-Concurrency.md",
       ],
       "/Algo/": [
         "/Algo/Summary.md",
