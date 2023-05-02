@@ -1,5 +1,12 @@
 # 基础
 
+## Object
+
+* hashCode
+* equals: 默认比较对象地址.
+* clone
+* toString
+
 ## 字符串拼接
 
 * `s1 + s2`
@@ -17,17 +24,9 @@
 
 ## 集合类
 
-* List: ArrayList, LinkedList.
-* Set: HashSet, TreeSet.
-* Map: HashMap, TreeMap.
-* Queue.
+![Collection](https://img.axlis.cn/note/Java/Collection.png)
 
-```java
-for (var entry : map.entrySet()) {
-    var key = entry.getKey();
-    var value = entry.getValue();
-}
-```
+* ConcurrentHashMap: 更新时对每个节点进行加锁, 多线程并发扩容.
 
 ## 编译运行过程
 

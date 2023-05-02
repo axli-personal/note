@@ -16,6 +16,7 @@ export default {
       { text: "C++", link: "/Cpp/" },
       { text: "Java", link: "/Java/1-Base.md" },
       { text: "算法", link: "/Algo/Summary.md" },
+      { text: "计算机网络", link: "/Network/1-Base.md" },
       { text: "操作系统", link: "/OS/1-Process.md" },
       { text: "MySQL", link: "/MySQL/1-Index.md" },
       { text: "Redis", link: "/Redis/1-Base.md" },
@@ -33,6 +34,7 @@ export default {
             "/Go/Basic/Encoding"
           ]
         },
+        "/Go/1-Context.md",
         {
           text: "Package",
           children: [
@@ -139,6 +141,9 @@ export default {
             "/Algo/LeetCode/145.md",
           ]
         }
+      ],
+      "/Network/": [
+        "/Network/1-Base.md",
       ],
       "/OS": [
         "/OS/1-Process.md",
