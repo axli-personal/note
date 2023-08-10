@@ -6,6 +6,8 @@
 
 > 解锁需要在finally中进行.
 
+## TODO: 什么是轻量级锁?
+
 ## AQS
 
 ![AQS](https://img.axlis.cn/note/Java/AQS.png)

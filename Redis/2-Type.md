@@ -1,6 +1,16 @@
 # 数据类型
 
-## 有序集合
+## Hash
+
+底层存储结构: hashtable
+
+## Set
+
+底层存储结构: hashtable
+
+## Sorted Set
+
+底层存储结构: skiplist
 
 ### 使用场景
 

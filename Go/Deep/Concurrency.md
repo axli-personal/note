@@ -17,21 +17,10 @@
 * Signal: 唤醒一个协程.
 * Broadcast: 唤醒所有协程.
 
+## Semaphore
+
+当条件变量不够用时, 可以考虑使用信号量, `golang.org/x/sync/semaphore`提供了这一扩展.
+
 ## WaitGroup
 
-```go
-func work(tasks ...string) {
-	var group sync.WaitGroup // forbid copy
-	group.Add(len(tasks))    // add the number of goroutines to wait
-
-	for _, task := range tasks {
-		go func(task string) {
-			fmt.Println(task, "Start")
-			group.Done()
-		}(task)
-	}
-
-	group.Wait()
-	fmt.Println("All tasks done!")
-}
-```
+等待一组协程退出, `Add`增加正在进行中的协程数, `Done`表示一个协程的工作已完成, `Wait`用于等待.

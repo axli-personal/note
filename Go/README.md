@@ -1,5 +1,5 @@
 # Golang
 
-## Feature
+学习Golang的参考资料:
 
-😁 This part will contain all the things about golang from basic to deep.
+* [Go 语言设计与实现](https://draveness.me/golang/)
