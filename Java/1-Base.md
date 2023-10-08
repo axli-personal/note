@@ -26,6 +26,18 @@
 
 ![Collection](https://img.axlis.cn/note/Java/Collection.png)
 
+Queue提供了队列的抽象, Deque是Queue的子接口, 提供了双端队列的抽象.
+
+::: tip 提醒
+Deque提供了栈的抽象, push等价于addFirst, pop等价于removeFirst.
+:::
+
+PriorityQueue(优先队列)只实现了Queue, 而LinkedList(双向链表)和ArrayDeque(循环队列)实现了Deque.
+
+::: tip 提醒
+PriorityQueue默认为小顶堆, 与数组的默认排序保持一致.
+:::
+
 * ConcurrentHashMap: 更新时对每个节点进行加锁, 多线程并发扩容.
 
 ## 编译运行过程
