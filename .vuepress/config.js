@@ -33,7 +33,7 @@ export default {
           children: [
             "/Go/Basic/Amazing-Feature",
             "/Go/Basic/Command-Line",
-            "/Go/Basic/Module-Management",
+            "/Go/Basic/Module",
             "/Go/Basic/Useful-Function",
             "/Go/Basic/Encoding"
           ]
@@ -197,6 +197,7 @@ export default {
         "/DB/5-Plan.md",
         "/DB/6-Migration.md",
         "/DB/7-Partition.md",
+        "/DB/SQL.md",
       ],
       "/Redis/": [
         "/Redis/1-Base.md",
