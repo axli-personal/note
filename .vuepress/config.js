@@ -197,7 +197,7 @@ export default {
         "/DB/4-PostgreSQL.md",
         "/DB/5-Plan.md",
         "/DB/6-Migration.md",
-        "/DB/7-Partition.md",
+        "/DB/scalability",
         "/DB/SQL.md",
       ],
       "/Redis/": [
