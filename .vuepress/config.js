@@ -199,6 +199,7 @@ export default {
         "/DB/6-Migration.md",
         "/DB/scalability",
         "/DB/SQL.md",
+        "/DB/Canal.md",
       ],
       "/Redis/": [
         "/Redis/1-Base.md",
