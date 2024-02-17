@@ -207,6 +207,7 @@ export default {
       ],
       "/Project/Ticket-System/": [
         "/Project/Ticket-System/README.md",
+        "/Project/Ticket-System/Devlopment.md",
         "/Project/Ticket-System/Test-Report.md",
       ],
     },
