@@ -1,15 +1,13 @@
-import { defaultTheme } from 'vuepress'
+import { defaultTheme } from "vuepress";
 
 export default {
   title: "Note",
   serviceWorker: true,
-  head: [
-    ["link", { rel: "icon", href: "/note.png" }]
-  ],
+  head: [["link", { rel: "icon", href: "/note.png" }]],
 
   theme: defaultTheme({
     themePlugins: {
-      externalLinkIcon: false
+      externalLinkIcon: false,
     },
     navbar: [
       { text: "Go", link: "/Go/" },
@@ -22,7 +20,11 @@ export default {
       { text: "计算机网络", link: "/Network/1-Base.md" },
       { text: "操作系统", link: "/OS/1-Process.md" },
       { text: "微服务", link: "/Microservices/load-balance" },
-      { text: "GitHub", link: "https://github.com/axli-personal" }
+      {
+        text: "项目",
+        children: ["/Project/Ticket-System/"],
+      },
+      { text: "GitHub", link: "https://github.com/axli-personal" },
     ],
     sidebar: {
       "/Go/": [
@@ -36,8 +38,8 @@ export default {
             "/Go/Basic/Command-Line",
             "/Go/Basic/Module",
             "/Go/Basic/Useful-Function",
-            "/Go/Basic/Encoding"
-          ]
+            "/Go/Basic/Encoding",
+          ],
         },
         {
           text: "Package",
@@ -51,26 +53,20 @@ export default {
             "/Go/Package/time",
             "/Go/Package/database/sql",
             "/Go/Package/net/url",
-          ]
+          ],
         },
         {
           text: "Deep",
-          children: [
-            "/Go/Deep/Concurrency.md",
-          ]
+          children: ["/Go/Deep/Concurrency.md"],
         },
         {
           text: "Driver",
-          children: [
-            "/Go/Driver/MySQL"
-          ]
+          children: ["/Go/Driver/MySQL"],
         },
         {
           text: "Cloud",
-          children: [
-            "/Go/Cloud/OOS-SDK"
-          ]
-        }
+          children: ["/Go/Cloud/OOS-SDK"],
+        },
       ],
       "/Cpp/": [
         {
@@ -82,14 +78,11 @@ export default {
             "/Cpp/Easy/STL",
             "/Cpp/Easy/IO",
             "/Cpp/Easy/Nested-Class",
-          ]
+          ],
         },
         {
           text: "Hard",
-          children: [
-            "/Cpp/Hard/Concurrency-01",
-            "/Cpp/Hard/Concurrency-02",
-          ]
+          children: ["/Cpp/Hard/Concurrency-01", "/Cpp/Hard/Concurrency-02"],
         },
       ],
       "/Java/": [
@@ -106,14 +99,11 @@ export default {
           children: [
             "/Algo/Template/Binary-Search.md",
             "/Algo/Template/Quick-Sort.md",
-          ]
+          ],
         },
         {
           text: "面试",
-          children: [
-            "/Algo/Interview/1.md",
-            "/Algo/Interview/2.md",
-          ]
+          children: ["/Algo/Interview/1.md", "/Algo/Interview/2.md"],
         },
         {
           text: "LeetCode",
@@ -179,7 +169,7 @@ export default {
             "/Algo/LeetCode/1228.md",
             "/Algo/LeetCode/1231.md",
             "/Algo/LeetCode/1259.md",
-          ]
+          ],
         },
         {
           text: "牛客",
@@ -187,8 +177,8 @@ export default {
             "/Algo/NowCoder/DP10.md",
             "/Algo/NowCoder/DP11.md",
             "/Algo/NowCoder/DP12.md",
-          ]
-        }
+          ],
+        },
       ],
       "/DB/": [
         "/DB/1-Index.md",
@@ -207,24 +197,19 @@ export default {
         "/Redis/3-Lock.md",
         "/Redis/4-Cluster.md",
       ],
-      "/MQ/": [
-        "/MQ/Base.md",
-        "/MQ/Kafka.md",
-      ],
-      "/Network/": [
-        "/Network/1-Base.md",
-      ],
-      "/OS": [
-        "/OS/1-Process.md",
-        "/OS/2-IO.md",
-      ],
+      "/MQ/": ["/MQ/Base.md", "/MQ/Kafka.md"],
+      "/Network/": ["/Network/1-Base.md"],
+      "/OS": ["/OS/1-Process.md", "/OS/2-IO.md"],
       "/Microservices/": [
         "/Microservices/DDD",
         "/Microservices/Gateway",
-        "/Microservices/load-balance"
+        "/Microservices/load-balance",
       ],
-    }
+      "/Project/Ticket-System/": [
+        "/Project/Ticket-System/README.md",
+        "/Project/Ticket-System/Test-Report.md",
+      ],
+    },
   }),
-  lastUpdated: "Last Updated"
-}
-
+  lastUpdated: "Last Updated",
+};
