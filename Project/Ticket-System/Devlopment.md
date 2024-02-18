@@ -94,3 +94,27 @@ ticketCache.removeSeatCountResultList(
 ::: warning 问题
 座位锁定逻辑更改后, 需要更新的`key`不止这一个, 甚至可能出现出发时间跨天的特殊情况!
 :::
+
+## 限流
+
+通过初步调研, 我们使用了`guava`中的限流实现.
+
+::: warning 提醒
+guava中`RateLimiter`的实现并不稳定, 带有`@Beta`注解.
+:::
+
+```java
+// 限流的参数.
+private final RateLimiter listTicketRateLimiter = RateLimiter.create(5);
+
+// 拒绝的策略.
+if (!listTicketRateLimiter.tryAcquire()) {
+    log.warn(
+            "list ticket reject by rate limiter, date = {}, fromStationId = {}, destStationId = {}",
+            date, fromStationId, destStationId
+    );
+    throw new RuntimeException("too many request");
+}
+```
+
+最终通过[性能测试](./Test-Report.md#限流场景下性能测试)发现效果非常好, 满足了业务需求.
