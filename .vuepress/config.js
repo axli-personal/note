@@ -1,7 +1,7 @@
 import { defaultTheme } from "vuepress";
 
 export default {
-  title: "Note",
+  title: "Home",
   serviceWorker: true,
   head: [["link", { rel: "icon", href: "/note.png" }]],
 
@@ -10,9 +10,14 @@ export default {
       externalLinkIcon: false,
     },
     navbar: [
-      { text: "Go", link: "/Go/" },
-      { text: "C++", link: "/Cpp/" },
-      { text: "Java", link: "/Java/1-Base.md" },
+      {
+        text: "编程语言",
+        children: [
+          { text: "Java", link: "/Java/1-Base.md" },
+          { text: "Go", link: "/Go/" },
+          { text: "C++", link: "/Cpp/" },
+        ],
+      },
       { text: "算法", link: "/Algo/Summary.md" },
       { text: "数据库", link: "/DB/1-Index.md" },
       { text: "缓存", link: "/Redis/1-Base.md" },

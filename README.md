@@ -1,15 +1,15 @@
 ---
 home: true
-heroText: Note
-tagline: 后端工程师的学习笔记.
+heroText: Backend Note
+tagline: 后端工程师的技术笔记
 footer: Copyright © 2023 AoXiang Li
 ---
 
 ## 编程语言
 
-* [Go](./Go/README.md)
-* [C++](./Cpp/README.md)
-* [Java](./Java/1-Thread.md)
+* [Java](./Java/1-Base.md)
+* [Go](./Go/)
+* [C++](./Cpp/)
 
 ## 计算机基础
 
@@ -18,5 +18,9 @@ footer: Copyright © 2023 AoXiang Li
 
 ## 中间件
 
-* [MySQL](./MySQL/1-Base.md)
+* [MySQL](./DB/1-Index.md)
 * [Redis](./Redis/1-Base.md)
+
+## 项目
+
+* [购票系统](./Project/Ticket-System/): 铁路购票系统, 完全从零开发.
