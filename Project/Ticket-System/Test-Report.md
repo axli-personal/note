@@ -74,8 +74,6 @@ java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not avail
 
 因为数据库的性能是有瓶颈的, 所以我们需要在`RT`和`QPS`之间找到一个平衡点.
 
-
-
 | 场景                         | QPS | RT   |
 | ---------------------------- | --- | ---- |
 | 100个用户, 无限流            | 6+  | 10s+ |
@@ -166,3 +164,12 @@ def search_ticket(self):
 对于QPS完全是达到了限流的上限; 由于限流采用了快速拒绝的策略, 失败的RT=2ms, 非常的低.
 
 以上的压测结果完全达到了业务的要求, 不会出现RT过长的情况, 影响用户体验, 同时也保留的大部分的吞吐量.
+
+## 冗余
+
+| 场景     | 方案   | QPS  | RT     | 测试报告                                                                           |
+| -------- | ------ | ---- | ------ | ---------------------------------------------------------------------------------- |
+| 10个用户 | `JOIN` | 4    | 2600ms | [Test-Report-3](https://dl.axlis.cn/note/Project/Ticket-System/Test-Report-3.html) |
+| 10个用户 | 冗余   | 13.8 | 810ms  | [Test-Report-4](https://dl.axlis.cn/note/Project/Ticket-System/Test-Report-4.html) |
+
+在进行[数据库表冗余设计和SQL改造](./Devlopment.md#冗余)后`QPS`和`RT`都有明显改善.

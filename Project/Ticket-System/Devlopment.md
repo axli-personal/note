@@ -118,3 +118,68 @@ if (!listTicketRateLimiter.tryAcquire()) {
 ```
 
 最终通过[性能测试](./Test-Report.md#限流场景下性能测试)发现效果非常好, 满足了业务需求.
+
+## 冗余
+
+```sql
+CREATE TABLE train_stops
+(
+    id             INT PRIMARY KEY AUTO_INCREMENT,
+    operation_id   INT       NOT NULL,
+    station_id     INT       NOT NULL,
+    arrival_time   TIMESTAMP NULL, -- 到站时间
+    departure_time TIMESTAMP NULL, -- 离站时间
+    -- 省略外键和索引
+);
+
+CREATE TABLE train_seats
+(
+    id              INT PRIMARY KEY AUTO_INCREMENT,
+    operation_id    INT         NOT NULL,
+    type            INT         NOT NULL,
+    carriage_number VARCHAR(20) NOT NULL,
+    seat_number     VARCHAR(20) NOT NULL,
+    departure_time  TIMESTAMP   NOT NULL, -- 反范式设计(冗余), 便于查询.
+    from_station_id INT         NOT NULL,
+    dest_station_id INT         NOT NULL,
+    status          INT         NOT NULL,
+    -- 省略外键和索引
+);
+```
+
+对于`departure_time`本来是存储在`train_stops`表中的, 但是在进行座位统计时需要这部分数据:
+
+```sql
+select train_seats.operation_id,
+       train_seats.type AS seat_type,
+       COUNT(*)         AS seat_count
+from train_seats
+            JOIN train_stops
+                ON train_seats.operation_id = train_stops.operation_id
+where train_seats.from_station_id = #{fromStationId}
+    AND train_seats.dest_station_id = #{destStationId}
+    AND train_seats.status = #{seatStatus}
+    AND train_stops.station_id = #{fromStationId}
+    AND TO_DAYS(train_stops.departure_time) = TO_DAYS(#{date})
+group by train_seats.operation_id, train_seats.type
+order by train_seats.operation_id, train_seats.type
+```
+
+在进行一般的`JOIN`查询时, 往往需要返回两张表的数据; 但在统计座位的场景下, `train_stops`只起到过滤数据的作用.
+
+并且`departure_time`本身的更新频率并不高, 所以对`departure_time`进行了冗余的设计, 统计座位则不需要`JOIN`:
+
+```sql
+select train_seats.operation_id,
+       train_seats.type AS seat_type,
+       COUNT(*)         AS seat_count
+from train_seats
+where train_seats.from_station_id = #{fromStationId}
+    AND train_seats.dest_station_id = #{destStationId}
+    AND train_seats.status = #{seatStatus}
+    AND TO_DAYS(train_seats.departure_time) = TO_DAYS(#{date})
+group by train_seats.operation_id, train_seats.type
+order by train_seats.operation_id, train_seats.type
+```
+
+经过[性能测试](./Test-Report.md#冗余)`QPS`和`RT`均有明显的改善.
