@@ -73,7 +73,7 @@ stopEntityList.sort((a, b) -> {
 
 在测试购票的时候发现购票接口的性能非常的差, 猜测可能是更新的`SQL`没有走合适的索引.
 
-在购票后需要清楚一部分记录余票量的缓存, 由于更新和查询的角度不同, 导致会有大量的缓存需要更新.
+在购票后需要清除一部分记录余票量的缓存, 由于更新和查询的角度不同, 导致会有大量的缓存需要更新.
 
 现有的缓存一致性逻辑:
 
@@ -183,3 +183,26 @@ order by train_seats.operation_id, train_seats.type
 ```
 
 经过[性能测试](./Test-Report.md#冗余)`QPS`和`RT`均有明显的改善.
+
+## 调整连接池
+
+项目使用的是`hikari`的连接池, 主要的调整的参数为`maximum-pool-size`和`connection-timeout`.
+
+```yaml
+hikari:
+    maximum-pool-size: 10
+    minimum-idle: 5
+    connection-timeout: 5000
+```
+
+将`connection-timeout`调整到了5000ms, 对于大部分的查询场景并不能接受高`RT`.
+
+经过[测试](./Test-Report.md#调整连接池)后发现:
+
+默认的`maximum-pool-size`已经可以充分利用数据库的性能, 增大连接数对吞吐量基本没有影响.
+
+在高并发(100个用户)的情况下, 出现过少量的连接超时情况, 但对吞吐量的影响不大.
+
+::: warning 提醒
+如果所有业务共用一个连接池, 那么一个业务并发高可能会影响其他业务; 将用于查询连接池进行单独配置是一个不错的思路.
+:::

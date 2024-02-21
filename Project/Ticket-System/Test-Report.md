@@ -167,9 +167,17 @@ def search_ticket(self):
 
 ## 冗余
 
-| 场景     | 方案   | QPS  | RT     | 测试报告                                                                           |
-| -------- | ------ | ---- | ------ | ---------------------------------------------------------------------------------- |
-| 10个用户 | `JOIN` | 4    | 2600ms | [Test-Report-3](https://dl.axlis.cn/note/Project/Ticket-System/Test-Report-3.html) |
-| 10个用户 | 冗余   | 13.8 | 810ms  | [Test-Report-4](https://dl.axlis.cn/note/Project/Ticket-System/Test-Report-4.html) |
+| 场景     | 方案   | QPS  | RT     | 测试报告                                                                   |
+| -------- | ------ | ---- | ------ | -------------------------------------------------------------------------- |
+| 10个用户 | `JOIN` | 4    | 2600ms | [报告3](https://dl.axlis.cn/note/Project/Ticket-System/Test-Report-3.html) |
+| 10个用户 | 冗余   | 13.8 | 810ms  | [报告4](https://dl.axlis.cn/note/Project/Ticket-System/Test-Report-4.html) |
 
 在进行[数据库表冗余设计和SQL改造](./Devlopment.md#冗余)后`QPS`和`RT`都有明显改善.
+
+## 调整连接池
+
+| 场景      | 方案                     | 测试报告                                                                   |
+| --------- | ------------------------ | -------------------------------------------------------------------------- |
+| 100个用户 | 5s连接超时, 10个最大连接 | [报告5](https://dl.axlis.cn/note/Project/Ticket-System/test-report-5.html) |
+
+在[减小了数据库连接超时时间](./Devlopment.md#调整连接池)后, 虽然有高并发时有少量失败的情况, 但整体的`RT`有改善, `QPS`没有明显下降.
