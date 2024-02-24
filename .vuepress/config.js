@@ -25,6 +25,7 @@ export default {
       { text: "计算机网络", link: "/Network/1-Base.md" },
       { text: "操作系统", link: "/OS/1-Process.md" },
       { text: "微服务", link: "/Microservices/load-balance" },
+      { text: "工具", link: "/tool/git.md" },
       {
         text: "项目",
         children: ["/Project/Ticket-System/"],
@@ -210,10 +211,12 @@ export default {
         "/Microservices/Gateway",
         "/Microservices/load-balance",
       ],
+      "/tool/": ["/tool/git.md"],
       "/Project/Ticket-System/": [
         "/Project/Ticket-System/README.md",
         "/Project/Ticket-System/Devlopment.md",
         "/Project/Ticket-System/Test-Report.md",
+        "/Project/Ticket-System/thinking.md",
       ],
     },
   }),
