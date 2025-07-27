@@ -24,7 +24,7 @@ export default {
       { text: "消息队列", link: "/MQ/Base.md" },
       { text: "计算机网络", link: "/Network/1-Base.md" },
       { text: "操作系统", link: "/OS/1-Process.md" },
-      { text: "微服务", link: "/Microservices/load-balance" },
+      { text: "微服务", link: "/Microservices/Consistency.md" },
       { text: "工具", link: "/tool/git.md" },
       {
         text: "项目",
@@ -207,6 +207,7 @@ export default {
       "/Network/": ["/Network/1-Base.md"],
       "/OS": ["/OS/1-Process.md", "/OS/2-IO.md"],
       "/Microservices/": [
+        "/Microservices/Consistency.md",
         "/Microservices/DDD",
         "/Microservices/Gateway",
         "/Microservices/load-balance",
