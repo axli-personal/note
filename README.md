@@ -21,6 +21,10 @@ footer: Copyright © 2023 AoXiang Li
 * [MySQL](./DB/1-Index.md)
 * [Redis](./Redis/1-Base.md)
 
+## 微服务
+
+* [Microservices](./Microservices/Consistency.md)
+
 ## 项目
 
 * [购票系统](./Project/Ticket-System/): 铁路购票系统, 完全从零开发.
