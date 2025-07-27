@@ -210,6 +210,7 @@ export default {
         "/Microservices/DDD",
         "/Microservices/Gateway",
         "/Microservices/load-balance",
+        "/Microservices/CircuitBreaker.md",
       ],
       "/tool/": ["/tool/git.md"],
       "/Project/Ticket-System/": [
