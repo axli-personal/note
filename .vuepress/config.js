@@ -1,9 +1,14 @@
-import { defaultTheme } from "vuepress";
+import { defineUserConfig } from 'vuepress';
+import { viteBundler } from '@vuepress/bundler-vite';
+import { defaultTheme } from '@vuepress/theme-default';
 
-export default {
+export default defineUserConfig({
   title: "Home",
   serviceWorker: true,
   head: [["link", { rel: "icon", href: "/note.png" }]],
+
+  bundler: viteBundler({
+  }),
 
   theme: defaultTheme({
     themePlugins: {
@@ -202,6 +207,7 @@ export default {
         "/Redis/2-Type.md",
         "/Redis/3-Lock.md",
         "/Redis/4-Cluster.md",
+        "/Redis/5-Local-Cache.md",
       ],
       "/MQ/": ["/MQ/Base.md", "/MQ/Kafka.md"],
       "/Network/": ["/Network/1-Base.md"],
@@ -224,4 +230,4 @@ export default {
     },
   }),
   lastUpdated: "Last Updated",
-};
+});
